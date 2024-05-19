@@ -2550,43 +2550,7 @@ void *hack_thread(void *arg){
     } while (!il2cppMap.isValid());
     mlovinit();
     setShader("_BumpMap");
-
     Wallhack();
     LogShaders();
-    hexPatches.Radar1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x2C54420")), "20 00 A0 E3");
-    hexPatches.Radar2 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x2C54438")), "20 00 A0 E3");
-    
-    
-
-
-    hexPatches.Money1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x3421f60")), "00 00 A0 E3");
-    hexPatches.Money2 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x3421f64")), "1E FF 2F E1");
-    hexPatches.Drop1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x22BC7C4")), "01 00 A0 E3");
-    hexPatches.Drop2 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x22BC7C8")), "1E FF 2F E1");
-    hexPatches.ChamsBypass = MemoryPatch::createWithHex("arm/libil2cpp.so", string2Offset(AY_OBFUSCATE("0x22A0A34")),"1E FF 2F E1");
-    hexPatches.speedbypas1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x22A00D4")), "1E FF 2F E1");
-    hexPatches.speedbypas2 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x23EE2A4")), "1E FF 2F E1");
-    
-    hexPatches.Ammo1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x1D7C8D8")), "61 0E 01 E3");
-    hexPatches.Ammo2 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x1D7C8DC")), "1E FF 2F E1");
-    hexPatches.NoRecoilF = MemoryPatch::createWithHex("libunity.so", string2Offset(AY_OBFUSCATE("0x7D0C4")), "00 00 00 E3");
-    hexPatches.Rapid = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x1D7C7C4")), "1E FF 2F E1");
-
-    hexPatches.invisible = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x22A32B4")), "1E FF 2F E1");
-
-    get_transform = (void* (*)(void*))KittyMemory::getAbsoluteAddress(libName, 0x2940B20);
-    get_BipedMap = (void* (*)(void*))KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x22A7E48")));
-    IsLocal = (bool (*)(void *)) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2B6C468")));
-    GetPlayerTeam = (int (*)(void *)) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x3084AAC")));
-    GetPlayerHealth = (int (*)(void*))KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x22A219C")));
-    GetPlayerHealth1 = (int (*)(void*))KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x22A22FC")));
-    set_position = (void (*)(void*, Vector3))KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2950344")));
-    get_position = (void (*)(void*, Vector3*))KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2950294")));
-    get_forward = (Vector3 (*)(void*))KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2950E70")));
-
-    GetPhoton = (void *(*) (void*)) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2B6EF00")));//PhotonPlayer::getOwner
-    IsOwnerActive = (bool (*) (void*)) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2B6EF10")));//PhotonPlayer::IsOwnerActive
-    get_time = (float (*)())KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x29187B0")));
-    set_TpsView3 = (void (*)(void*))KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x22A4B34")));
     pthread_exit(nullptr);
 }
