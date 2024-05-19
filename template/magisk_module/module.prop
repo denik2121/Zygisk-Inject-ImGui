@@ -1,6 +1,6 @@
-id=${id}
-name=${name}
-version=${version}
-versionCode=${versionCode}
-author=${author}
-description=${description}
+id=OneWare
+name=OneWare
+version=3.0
+versionCode=1
+author=bouze
+description=dev - @bouzefuck

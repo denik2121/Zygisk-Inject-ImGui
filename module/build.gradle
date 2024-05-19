@@ -26,6 +26,7 @@ android {
             version "3.18.1"
         }
     }
+    ndkVersion '25.1.8937393'
 }
 
 repositories {

@@ -1106,6 +1106,33 @@ void ImGuiStyle::ScaleAllSizes(float scale_factor)
     MouseCursorScale = ImFloor(MouseCursorScale * scale_factor);
 }
 
+void ImGuiStyle::ResetAllSizes()
+{
+    WindowPadding = ImVec2(8,8);
+    WindowRounding = 0.0f;
+    WindowMinSize = ImVec2(32,32);
+    ChildRounding = 0.0f;
+    PopupRounding = 0.0f;
+    FramePadding = ImVec2(4,3);
+    FrameRounding = 0.0f;
+    ItemSpacing = ImVec2(8,4);
+    ItemInnerSpacing = ImVec2(4,4);
+    CellPadding = ImVec2(4,2);
+    TouchExtraPadding = ImVec2(0,0);
+    IndentSpacing = 21.0f;
+    ColumnsMinSpacing = 6.0f;
+    ScrollbarSize = 14.0f;
+    ScrollbarRounding = 9.0f;
+    GrabMinSize = 10.0f;
+    GrabRounding = 0.0f;
+    LogSliderDeadzone = 4.0f;
+    TabRounding = 4.0f;
+    TabMinWidthForCloseButton = 0.0f;
+    DisplayWindowPadding = ImVec2(19,19);
+    DisplaySafeAreaPadding = ImVec2(3,3);
+    MouseCursorScale = 1.0f;
+}
+
 ImGuiIO::ImGuiIO()
 {
     // Most fields are initialized with zero

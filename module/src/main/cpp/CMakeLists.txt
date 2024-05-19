@@ -41,9 +41,7 @@ set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} ${LINKER_FLAGS}")
 include_directories(Includes)
 include_directories(ImGui)
 include_directories(ImGui/backends)
-
-add_library(${MODULE_NAME} SHARED  ImGui/imgui.cpp ImGui/imgui_draw.cpp ImGui/imgui_demo.cpp ImGui/imgui_widgets.cpp ImGui/imgui_tables.cpp ImGui/backends/imgui_impl_opengl3.cpp ImGui/backends/imgui_impl_android.cpp  main.cpp hook.cpp)
-
+add_library(${MODULE_NAME} SHARED  ImGui/imgui.cpp Chams.h ImGui/imgui_draw.cpp Substrate/SubstratePosixMemory.cpp Substrate/hde64.c Substrate/hde64.h Substrate/SubstrateHook.cpp Substrate/SubstrateDebug.cpp Substrate/SymbolFinder.cpp KittyMemory/KittyMemory.cpp KittyMemory/KittyUtils.cpp Substrate/CydiaSubstrate.h KittyMemory/MemoryBackup.cpp KittyMemory/MemoryPatch.cpp ImGui/imgui_demo.cpp ImGui/imgui_widgets.cpp ImGui/imgui_tables.cpp ImGui/backends/imgui_impl_opengl3.cpp ImGui/backends/imgui_impl_android.cpp  main.cpp hook.cpp)
 
 find_library(log-lib log)
 find_library(egl EGL)
