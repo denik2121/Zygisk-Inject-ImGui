@@ -2555,11 +2555,8 @@ void *hack_thread(void *arg){
     LogShaders();
     hexPatches.Radar1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x2C54420")), "20 00 A0 E3");
     hexPatches.Radar2 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x2C54438")), "20 00 A0 E3");
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2F327D0"))), (void *) EquippedSkin, (void **) &old_EquippedSkin);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2F35DE0"))), (void *) EquippedKnife, (void **) &old_EquippedKnife);
-
-    MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x294EAB4")), "1E FF 2F E1").Modify();
-    MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x294EB00")), "1E FF 2F E1").Modify();
+    
+    
 
 
     hexPatches.Money1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x3421f60")), "00 00 A0 E3");
@@ -2569,31 +2566,13 @@ void *hack_thread(void *arg){
     hexPatches.ChamsBypass = MemoryPatch::createWithHex("arm/libil2cpp.so", string2Offset(AY_OBFUSCATE("0x22A0A34")),"1E FF 2F E1");
     hexPatches.speedbypas1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x22A00D4")), "1E FF 2F E1");
     hexPatches.speedbypas2 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x23EE2A4")), "1E FF 2F E1");
-    hexPatches.speedbypas1.Modify();
-    hexPatches.speedbypas2.Modify();
+    
     hexPatches.Ammo1 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x1D7C8D8")), "61 0E 01 E3");
     hexPatches.Ammo2 = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x1D7C8DC")), "1E FF 2F E1");
     hexPatches.NoRecoilF = MemoryPatch::createWithHex("libunity.so", string2Offset(AY_OBFUSCATE("0x7D0C4")), "00 00 00 E3");
     hexPatches.Rapid = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x1D7C7C4")), "1E FF 2F E1");
 
     hexPatches.invisible = MemoryPatch::createWithHex("libil2cpp.so", string2Offset(AY_OBFUSCATE("0x22A32B4")), "1E FF 2F E1");
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2A5754C"))),
-                   (void *) air_jump_system, (void **) &old_air_jump_system_general);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x1B95BBC"))),
-                   (void *) get_TouchCount, (void **) &old_get_TouchCount);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x9F43C0"))), (void *) setGloves, (void **) &old_setGloves);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x851E10"))), (void *) Get_FireRate, (void **) &old_Get_FireRate);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x22A3D98"))), (void *) PlayerControllerUpdate, (void **) &old_PlayerControllerUpdate);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x848F88"))), (void *) CastBullet, (void **) &old_CastBullet);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x22A6640"))), (void *) CameraControllerFPS_LateUpdate, (void **) &old_CameraControllerFPS_LateUpdate);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x23F0B6C"))), (void *) PlayerTranslationParameters_get_SpeedDefault, (void **) &old_PlayerTranslationParameters_get_SpeedDefault);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x155DE84"))), (void *) RagdollController_Simulate, (void **) &old_RagdollController_Simulate);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2F22C74"))), (void *) CameraScopeZoomer_Update, (void **) &old_CameraScopeZoomer_Update);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2F29950"))), (void *) KnifeController_LocalUpdate, (void **) &old_KnifeController_LocalUpdate);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x25740AC"))), (void *) PlayerHitbox_Instantiate, (void **) &old_PlayerHitbox_Instantiate);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x847608"))), (void *) Get_PenetrationLoss, (void **) &old_Get_PenetrationLoss);
-    MSHookFunction((void *) KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x2B5C3A4"))), (void *) Get_TimeStamp, (void **) &old_Get_TimeStamp);
-
 
     get_transform = (void* (*)(void*))KittyMemory::getAbsoluteAddress(libName, 0x2940B20);
     get_BipedMap = (void* (*)(void*))KittyMemory::getAbsoluteAddress(libName, string2Offset(AY_OBFUSCATE("0x22A7E48")));
